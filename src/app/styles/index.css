@@ -1,0 +1,49 @@
+/* index.css */
+
+.reset-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; 
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reset-button:hover {
+    background-color: #0056b3;
+  }
+  /* Add this CSS to your stylesheet */
+.dock {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .dock button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .dock button.active {
+    color: #00bcd4;
+  }
+  
+  
+  
+  
