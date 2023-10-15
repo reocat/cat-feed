@@ -1,0 +1,8 @@
+{
+  "appId": "mimi.feed",
+  "appName": "CatFeed",
+  "webDir": "out",
+  "server": {
+    "androidScheme": "https"
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CatFeed</string>
+    <string name="title_activity_main">CatFeed</string>
+    <string name="package_name">mimi.feed</string>
+    <string name="custom_url_scheme">mimi.feed</string>
+</resources>
