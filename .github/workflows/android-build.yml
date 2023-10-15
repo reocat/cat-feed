@@ -46,10 +46,11 @@ jobs:
 
       - name: Sign dev build
         run: jarsigner -keystore android/release.decrypted.jks -storepass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -signedjar ./android/app/build/outputs/bundle/release/app-release-signed.aab ./android/app/build/outputs/bundle/release/app-release.aab release
-
+      - name: List 
+        run:  ls android/app/build/outputs/apk/release
       - name: Upload release bundle
         uses: actions/upload-artifact@v3
         with:
           name: app-release
-          path: android/app/build/outputs/bundle/release/app-release-signed.apk
+          path: android/app/build/outputs/apk/release/app-release-signed.apk
           retention-days: 60
