@@ -46,13 +46,17 @@ jobs:
 
       - name: Sign dev build
         run: jarsigner -keystore android/release.decrypted.jks -storepass "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" -signedjar ./android/app/build/outputs/bundle/release/app-release-signed.aab ./android/app/build/outputs/bundle/release/app-release.aab release
-      - name: List 
-        run:  |
-          ls -l android/app/build/outputs
-          ls -l android/app/build/outputs/*
-      - name: Upload release bundle
-        uses: actions/upload-artifact@v3
+      - name: Convert aab to apk
+        id: convert_aab
+        uses: mukeshsolanki/bundletool-action@v1.0.0
         with:
-          name: app-release
-          path: android/app/build/outputs/apk/release/app-release-signed.apk
-          retention-days: 60
+          aabFile: app/build/outputs/bundle/release/app-release.aab
+          base64Keystore: ${{ secrets.RELEASE_KEYSTORE }}
+          keystorePassword: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
+          keystoreAlias: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: release-apk
+          path: ${{ steps.convert_aab.outputs.apkPath }}
