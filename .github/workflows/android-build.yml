@@ -53,7 +53,7 @@ jobs:
           aabFile: app/build/outputs/bundle/release/app-release.aab
           base64Keystore: ${{ secrets.RELEASE_KEYSTORE }}
           keystorePassword: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
-          keystoreAlias: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
+          ~keystore~Alias: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
           keyPassword: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
 
       - uses: actions/upload-artifact@v3
