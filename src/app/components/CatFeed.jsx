@@ -84,7 +84,7 @@ const CatFeed = () => {
   };
 
   const redirectToSettings = () => {
-    window.location = 'settings';
+    window.location = '/' + 'settings';
    };
 
 
