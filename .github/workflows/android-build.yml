@@ -50,7 +50,7 @@ jobs:
         id: convert_aab
         uses: mukeshsolanki/bundletool-action@v1.0.0
         with:
-          aabFile: app/build/outputs/bundle/release/app-release.aab
+          aabFile: android/app/build/outputs/bundle/release/app-release.aab
           base64Keystore: ${{ secrets.RELEASE_KEYSTORE }}
           keystorePassword: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
           keystoreAlias: ${{ secrets.ALIAS }}
