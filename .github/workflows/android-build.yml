@@ -31,10 +31,10 @@ jobs:
         run: npm run static
 
       - name: Capacitor update
-        run: npx cap update
+        run: npx cap sync
 
-      - name: Capacitor copy
-        run: npx cap copy
+#      - name: Capacitor copy
+#        run: npx cap copy
 
       - name: Build app bundle
         run: cd android && ./gradlew bundle
